@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Web Content Server</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table>
+    	<tr th:each="p : ${persons}">
+    		<td th:text="${p.firstName}"></td>
+    		<td th:text="${p.lastName}"></td>
+    		<td th:text="${p.uri}"></td>
+    		<td><a th:href="@{/edit?uri=} + ${p.uri}">Edit</a></td>
+    		<td><a th:href="@{/delete?uri=} + ${p.uri}">Delete</a></td>
+    	</tr>
+    </table>
+    
+</body>
+</html>
